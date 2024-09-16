@@ -1,5 +1,6 @@
 import { Post } from '.'
 import { writeFile } from 'fs/promises'
+import { sampleSize } from 'lodash'
 
 async function generateData() {
   const posts: Post[] = []
@@ -27,7 +28,7 @@ async function generateData() {
     end: new Date('2023-12-20'),
   }
 
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 100_000; i++) {
     const post: Post = {
       id: i + 1,
       title: `Post ${i + 1}`,
@@ -47,14 +48,11 @@ async function generateData() {
               createdAtDateRange.start.getTime())
       ),
       createdBy: `User ${Math.floor(Math.random() * 10)}`,
-      category: [
-        possibleCategories[
-          Math.floor(Math.random() * possibleCategories.length)
-        ],
-      ],
-      targets: [
-        possibleTargets[Math.floor(Math.random() * possibleTargets.length)],
-      ],
+      category: sampleSize(
+        possibleCategories,
+        1 + Math.floor(Math.random() * 2)
+      ),
+      targets: sampleSize(possibleTargets, 1 + Math.floor(Math.random() * 2)),
     }
     posts.push(post)
   }

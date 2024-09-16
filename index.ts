@@ -22,27 +22,30 @@ export type PostFilter = {
   createdAtEnd?: Date
 }
 
-const posts: Post[] = JSON.parse(readFileSync('posts.json', 'utf-8'))
-
-async function search(filter: PostFilter): Promise<Post[]> {
-  // ...
-  return []
+export async function search(filter: PostFilter): Promise<Post[]> {
+  const posts: Post[] = JSON.parse(readFileSync('./data/posts.json', 'utf-8'))
+  return posts.filter((post) => {
+    return post.title.includes(filter.title ?? '')
+  })
 }
 
 async function main() {
   // Pode mudar os valores para testar
-  const posts = await search({
-    title: 'Post 1',
+  const filter: PostFilter = {
+    title: '9',
     kind: 'report',
     category: 'Notícia',
     target: 'Aluno',
     publishedAtStart: new Date('2024-01-01'),
-    publishedAtEnd: new Date('2024-01-02'),
+    publishedAtEnd: new Date('2024-06-20'),
     createdAtStart: new Date('2023-08-01'),
-    createdAtEnd: new Date('2023-08-02'),
-  })
+    createdAtEnd: new Date('2023-12-20'),
+  }
+  console.time('filter')
+  const posts = await search(filter)
+  console.timeEnd('filter')
 
-  console.log(posts)
+  // console.log(posts)
 }
 
 main()
