@@ -6,7 +6,6 @@ export type Post = {
   kind: 'report' | 'gallery' | 'video' | 'banner' | 'informative'
   publishedAt: Date
   createdAt: Date
-  createdBy: string
   category: string[]
   targets: string[]
 }
@@ -24,9 +23,7 @@ export type PostFilter = {
 
 export async function search(filter: PostFilter): Promise<Post[]> {
   const posts: Post[] = JSON.parse(readFileSync('./data/posts.json', 'utf-8'))
-  return posts.filter((post) => {
-    return post.title.includes(filter.title ?? '')
-  })
+  return posts
 }
 
 async function main() {

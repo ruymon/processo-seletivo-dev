@@ -47,7 +47,6 @@ async function generateData() {
             (createdAtDateRange.end.getTime() -
               createdAtDateRange.start.getTime())
       ),
-      createdBy: `User ${Math.floor(Math.random() * 10)}`,
       category: sampleSize(
         possibleCategories,
         1 + Math.floor(Math.random() * 2)
