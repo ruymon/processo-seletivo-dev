@@ -41,31 +41,18 @@ Por exemplo, se os campos `category` e `kind` forem passados, o filtro deve reto
 
 O retorno da função deve ser um array de Posts que atendem aos critérios de filtro e estejam ordenados por `publishedAt`.
 
-### Campos
+### Campos do Filtro
 
-#### title
-Filtrar posts que possuem o título a substring passada no PostFilter.title, sendo case insensitive.
-
-#### kind
-Filtrar posts que possuem o kind igual ao passado no PostFilter.kind.
-
-#### category
-Filtrar posts que possuem a categoria igual a passada no PostFilter.category.
-
-#### target
-Filtrar posts que incluem o target passado no PostFilter.target no seu array de targets.
-
-#### publishedAtStart
-Filtrar posts que possuem a data de publicação maior ou igual a passada no PostFilter.publishedAtStart.
-
-#### publishedAtEnd
-Filtrar posts que possuem a data de publicação menor ou igual a passada no PostFilter.publishedAtEnd.
-
-#### createdAtStart
-Filtrar posts que possuem a data de criação maior ou igual a passada no PostFilter.createdAtStart.
-
-#### createdAtEnd
-Filtrar posts que possuem a data de criação menor ou igual a passada no PostFilter.createdAtEnd.
+| Campo | Descrição |
+| ----- | --------- |
+| title | Filtrar posts que possuem o título a substring passada no PostFilter.title, sendo case insensitive. |
+| kind | Filtrar posts que possuem o kind igual ao passado no PostFilter.kind. |
+| category | Filtrar posts que possuem a categoria igual a passada no PostFilter.category. |
+| target | Filtrar posts que incluem o target passado no PostFilter.target no seu array de targets. |
+| publishedAtStart | Filtrar posts que possuem a data de publicação maior ou igual a passada no PostFilter.publishedAtStart. |
+| publishedAtEnd | Filtrar posts que possuem a data de publicação menor ou igual a passada no PostFilter.publishedAtEnd. |
+| createdAtStart | Filtrar posts que possuem a data de criação maior ou igual a passada no PostFilter.createdAtStart. |
+| createdAtEnd | Filtrar posts que possuem a data de criação menor ou igual a passada no PostFilter.createdAtEnd. |
 
 ## Observações
 - O projeto utiliza Typescript e Node.js.
