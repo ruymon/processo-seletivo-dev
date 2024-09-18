@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "tsx datagen.ts",
     "start": "tsx index.js",
-    "test": "tsx validate.ts --test"
+    "test": "tsx test.ts --test"
   },
   "author": "",
   "license": "ISC",
