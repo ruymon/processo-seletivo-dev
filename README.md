@@ -69,8 +69,9 @@ Filtrar posts que possuem a data de criação menor ou igual a passada no PostFi
 
 ## Observações
 - O projeto utiliza Typescript e Node.js.
-- A função de filtro está implementada no arquivo `index.ts`.
-- Os testes estão implementados no arquivo `validate.ts`.
+- A função de filtro deverá ser implementada no arquivo `search.ts`.
+- Os testes estão implementados no arquivo `validate.ts` e você pode rodá-los com `yarn test`.
+- Você pode testar manualmente a função editando o arquivo `index.ts` e rodando `yarn start`.
 - Não é permitido o uso de bibliotecas externas.
 - Não é permitido o uso de ferramentas GPTs.
 - Pode consultar documetações na internet.
