@@ -1,7 +1,6 @@
-import { describe, it } from "node:test";
-import test from "node:test";
 import assert from "node:assert";
-import { Post, POST_KINDS, search } from "./search";
+import { describe, it } from "node:test";
+import { Post, POST_KIND, search } from "./search";
 
 describe("Empty filter", () => {
   it("should return all posts if filter is empty", async () => {
@@ -44,7 +43,7 @@ describe("Filter with title", () => {
 });
 
 describe("Filter with kind", () => {
-  for (const kind of POST_KINDS) {
+  for (const kind of POST_KIND) {
     it(`should return matching posts if kind is "${kind}"`, async () => {
       const posts = await search({ kind });
       assert(posts.length > 0);

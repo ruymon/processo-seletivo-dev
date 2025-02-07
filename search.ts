@@ -1,6 +1,19 @@
 import { readFileSync } from "fs";
 
-type PostKind = "report" | "gallery" | "video" | "banner" | "informative";
+export type PostKind =
+  | "report"
+  | "gallery"
+  | "video"
+  | "banner"
+  | "informative";
+
+export const POST_KIND: PostKind[] = [
+  "report",
+  "gallery",
+  "video",
+  "banner",
+  "informative",
+] as const;
 
 export type Post = {
   id: number;
